@@ -11,4 +11,5 @@ due to the fact that i've started working on lab 6 and wasn't working with funct
 
 Reviewed the lab video to find out what things i needed to import, if i need to import anything else i guess i'll figure it out along the way. get_apod_info nabbing the apod date from before and then it now return the apod_dict. Not sure if i'll need to return the whole dictionary of just parts of this with this function but that's for later i guess if it doesn't work the way i need it to.
 
+used sha256(image_url.encode()) to encode the image from the url and then used print(image_sha256.hexdigest()) to print out the hash for the image. and for the image size len(requests.get(image_url).content) and printed the image_size variable + bytes to print the image size. Need to figure out how to work with the local urls, assuming it has something to with with that os path module.
 
