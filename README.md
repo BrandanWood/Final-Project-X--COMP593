@@ -24,3 +24,5 @@ hopefully this will work well until the end and i won't have to backtrack to my 
 The only issue i forsee doing this is having to add /'s to the end of a directory or figuring out a way to make that work without worrying about that?
 
 regex proably won't work, probably can use path module to do something about this.
+
+currently working with downloading the apod image, i have found several methods to get the job done but i just need to figure out how to get the reponse into the other function and save that file into the image path. once i figure that out everything else should be pretty simple.
