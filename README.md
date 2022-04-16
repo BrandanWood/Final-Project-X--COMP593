@@ -22,3 +22,5 @@ return image_path
     
 hopefully this will work well until the end and i won't have to backtrack to my previous function.
 The only issue i forsee doing this is having to add /'s to the end of a directory or figuring out a way to make that work without worrying about that?
+
+regex proably won't work, probably can use path module to do something about this.
