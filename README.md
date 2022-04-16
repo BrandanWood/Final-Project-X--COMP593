@@ -13,3 +13,12 @@ Reviewed the lab video to find out what things i needed to import, if i need to 
 
 used sha256(image_url.encode()) to encode the image from the url and then used print(image_sha256.hexdigest()) to print out the hash for the image. and for the image size len(requests.get(image_url).content) and printed the image_size variable + bytes to print the image size. Need to figure out how to work with the local urls, assuming it has something to with with that os path module.
 
+getting the image path was interesting, not sure if i was meant to do it this way but i'm going to do it this way anyway. imported re, using regex to make a capture group of the image name from the image_url. Joining the strings together to get the path with the image name added to the end.
+
+so basically...
+image_name = re.match('https://apod.nasa.gov/apod/image/\d*/(\w*.jpg)', image_url)
+image_path = dir_path + image_name.group(1)
+return image_path
+    
+hopefully this will work well until the end and i won't have to backtrack to my previous function.
+The only issue i forsee doing this is having to add /'s to the end of a directory or figuring out a way to make that work without worrying about that?
