@@ -39,7 +39,7 @@ it uses requests module to do this. Now i just have to figure out how to get it 
 
 hey it works!
 
-def download_apod_image(image_url):
+    def download_apod_image(image_url):
     """
     Downloads an image from a specified URL.
 
@@ -50,7 +50,7 @@ def download_apod_image(image_url):
     return response.content
 
 
-def save_image_file(image_msg, image_path):
+    def save_image_file(image_msg, image_path):
     """
     Extracts an image file from an HTTP response message
     and saves the image file to disk.
@@ -65,3 +65,16 @@ def save_image_file(image_msg, image_path):
     
     nice!
 
+4/17/2022 - Working on the database stuff and refering back to lab 3 to remember what i did previously. Created the table successfully and it's being made in the current proper folder. i have it set up to insert the information into the table and execute the addApodQuery, addApod and then commits and closes.
+
+Seem to having this error. sqlite3.InterfaceError: Error binding parameter 2 - probably unsupported type.
+  File "apod_desktop.py", line 59, in main
+    add_image_to_db(db_path, image_path, image_size, image_sha256)
+  File "apod_desktop.py", line 228, in add_image_to_db
+    c.execute(addApodQuery, addApod)
+
+The things related to these are probably the issue not these lines themselves.
+
+just converted the data types into str and int where nessacary. it works now.
+
+Now just need to figure out how to fix up image_already_in_db function then it's just setting the desktop background.
