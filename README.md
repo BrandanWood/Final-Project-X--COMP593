@@ -37,3 +37,31 @@ return file.write(response.content)
 
 it uses requests module to do this. Now i just have to figure out how to get it to save the image to the file path.
 
+hey it works!
+
+def download_apod_image(image_url):
+    """
+    Downloads an image from a specified URL.
+
+    :param image_url: URL of image
+    :returns: Response message that contains image data
+    """
+    response = requests.get(image_url)
+    return response.content
+
+
+def save_image_file(image_msg, image_path):
+    """
+    Extracts an image file from an HTTP response message
+    and saves the image file to disk.
+
+    :param image_msg: HTTP response message
+    :param image_path: Path to save image file
+    :returns: None
+    """
+    file = open(image_path, 'wb')
+    file.write(image_msg)
+    file.close()
+    
+    nice!
+
