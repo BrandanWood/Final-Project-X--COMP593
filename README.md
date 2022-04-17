@@ -26,3 +26,14 @@ The only issue i forsee doing this is having to add /'s to the end of a director
 regex proably won't work, probably can use path module to do something about this.
 
 currently working with downloading the apod image, i have found several methods to get the job done but i just need to figure out how to get the reponse into the other function and save that file into the image path. once i figure that out everything else should be pretty simple.
+
+4/16/2022 - got around to actually getting the file to download and it downloads to the current working directory. going to return that downloading of the file and use that for the save_image_file function
+
+code looks something like this for the downloading of the apod image.
+
+response = requests.get(image_url)
+file = open(path.basename(image_url), 'wb')
+return file.write(response.content)
+
+it uses requests module to do this. Now i just have to figure out how to get it to save the image to the file path.
+
