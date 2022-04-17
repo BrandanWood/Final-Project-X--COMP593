@@ -78,3 +78,15 @@ The things related to these are probably the issue not these lines themselves.
 just converted the data types into str and int where nessacary. it works now.
 
 Now just need to figure out how to fix up image_already_in_db function then it's just setting the desktop background.
+
+i struggled for a while the image already in db part, couldn't figure out how to use the varible in the c.execute to find the specific hash in the database but i found out that you can just put an =? and the ? will be filled with a varible you put after that part of the code. so
+
+c.execute("SELECT image_sha256 FROM apod WHERE image_sha256=?", (hashie,)) the hashie variable value will take the place of the ?.
+
+after that i just used the length of the return and if it's greater or equal to 1 then it returns true and if it's less than it returns false.
+
+doing a little googling, i found the ctypes module and a quick couple searches on how to set desktop backgrounds with python told me how to do it so it was suprisingly very easy to do. just have to test the script and see if it actually works.
+
+yo it works!!! it's kinda sick. might play around and see if i can add a gui to it for fun.
+
+PROJECT COMPLETE!
